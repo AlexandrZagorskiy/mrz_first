@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабараторная работа 1</title>
+</head>
+<body>
+	<h2 align="center">Вычисления целочисленного частного пары 4-разрядных чисел делением без восстановления частичного остатка</h1>
+	<h4 align="left" style="margin-left: 30px">Введите два набора чисел через пробел</h2>
+
+
+	<p align="left">
+		Первый набор: 
+		<input type="text" id="firstVector" placeholder="Введите числа через пробел">
+		<script>
+			document.getElementById("firstVector").onkeypress= function(event) 
+			{
+				event= event || window.event;
+ 				if (event.charCode && ((event.charCode < 48 || event.charCode > 57) && (event.charCode != 32)))// проверка на event.charCode - чтобы пользователь мог нажать backspace, enter, стрелочку назад...
+					return false;
+			};
+		</script>
+	</p>
+
+	<p align="left">
+		Второй набор: 
+		<input type="text" id="secondVector" placeholder="Введите числа через пробел">
+		<script>
+			document.getElementById("secondVector").onkeypress= function(event) 
+			{
+				event= event || window.event;
+ 				if (event.charCode && ((event.charCode < 48 || event.charCode > 57) && (event.charCode != 32)))// проверка на event.charCode - чтобы пользователь мог нажать backspace, enter, стрелочку назад...
+					return false;
+			};
+		</script>
+	</p>
+
+	<p align="left">
+		Время выполнения одного этапа: 
+		<input type="text" id="timer" placeholder="Enter number">
+		<script>
+			document.getElementById("timer").onkeypress= function(event) 
+			{
+				event= event || window.event;
+ 				if(event.charCode && (event.charCode < 48 || event.charCode > 57))// проверка на event.charCode - чтобы пользователь мог нажать backspace, enter, стрелочку назад...
+					return false;				
+			};
+		</script>
+	</p>
+
+	<p align="left" style="margin-left: 60px">
+		<button class="create" type="submit" style="font-family: monospace" onclick="pipelineInit()">
+			Выполнить
+		</button>
+	</p>
+
+	<h4 id="reduction"></h2>
+	<script src="pipeline.js"></script>
+</body>
+</html>
